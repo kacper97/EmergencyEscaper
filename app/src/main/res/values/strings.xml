@@ -3,6 +3,12 @@
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
+    <!--Log in and register-->
     <string name="reg_title">Register</string>
     <string name="login_title">Login</string>
+    <string name="hint_email">Email</string>
+    <string name="hint_password">Password</string>
+    <string name="button_register">Register</string>
+    <string name="button_login">Log In</string>
+    <string name="button_cancel">Cancel</string>
 </resources>

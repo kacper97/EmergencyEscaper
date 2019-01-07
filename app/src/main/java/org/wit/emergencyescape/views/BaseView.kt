@@ -23,9 +23,9 @@ open abstract class BaseView() : AppCompatActivity(), AnkoLogger {
     fun navigateTo(view: VIEW, code: Int = 0, key: String = "", value: Parcelable? = null) {
         var intent = Intent(this, mainScreen::class.java)
         when (view) {
-            VIEW.LOCATION -> intent = Intent(this, mainscreen::class.java)
+            VIEW.LOCATION -> intent = Intent(this, mainScreen::class.java)
             VIEW.LOGIN -> intent = Intent(this, LoginView::class.java)
-            VIEW.REGISTER -> intent = Intent(this, RegisterView::class.java)
+            VIEW.REGISTER -> intent = Intent(this, RegistrationView::class.java)
         }
         if (key != "") {
             intent.putExtra(key, value)

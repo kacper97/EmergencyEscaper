@@ -27,7 +27,7 @@ class LoginView : BaseView(), AnkoLogger {
 
         progressBar.visibility = View.GONE
 
-        btnLogIn.setOnClickListener() {
+        button_login.setOnClickListener() {
             val email = logInEmail.text.toString()
             val password = logInPassword.text.toString()
             presenter.doLogIn(email, password)

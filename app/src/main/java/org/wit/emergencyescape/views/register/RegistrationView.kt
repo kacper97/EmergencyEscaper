@@ -3,7 +3,7 @@ package org.wit.emergencyescape.views.register
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
-import kotlinx.android.synthetic.main.activity_register.*
+import kotlinx.android.synthetic.main.activity_registration.*
 import org.jetbrains.anko.AnkoLogger
 
 import org.wit.emergencyescape.R
@@ -15,7 +15,7 @@ class RegistrationView : BaseView(), AnkoLogger {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_register)
+        setContentView(R.layout.activity_registration)
 
         toolbarRegister.title = getString(R.string.reg_title)
         setSupportActionBar(toolbarRegister)
