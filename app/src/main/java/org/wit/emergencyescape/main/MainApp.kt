@@ -16,7 +16,7 @@ class MainApp : Application(), AnkoLogger {
         firestore = LocationFireStore(applicationContext)
         locations = firestore.locations
 
-        info("Hillfort started")
+        info("App Started started")
 
         //
     }
