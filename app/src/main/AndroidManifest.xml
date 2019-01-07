@@ -11,18 +11,21 @@
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
 
-        <activity android:name=".views.login.LoginView"
-                  android:windowSoftInputMode="stateHidden">
+        <activity
+                android:name=".activities.SplashActivity"
+                android:theme ="@style/AppTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+        <activity android:name=".views.login.LoginView"
+                  android:windowSoftInputMode="stateHidden"/>
 
         <activity android:name=".views.register.RegistrationView"
                   android:windowSoftInputMode="stateHidden"/>
 
-        <activity android:name=".mainScreen"
+        <activity android:name=".activities.mainScreen"
                     android:label="@string/app_name"/>
     </application>
 

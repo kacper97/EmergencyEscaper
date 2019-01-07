@@ -5,11 +5,10 @@ import android.os.Parcelable
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import org.jetbrains.anko.AnkoLogger
-import org.wit.emergencyescape.mainScreen
+import org.wit.emergencyescape.activities.mainScreen
 import org.wit.emergencyescape.views.login.LoginView
 import org.wit.emergencyescape.views.register.RegistrationView
 import org.wit.emergencyescape.models.LocationModel
-import org.wit.emergencyescape.views.BasePresenter
 
 enum class VIEW {
     LOCATION, LOGIN, REGISTER

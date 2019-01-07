@@ -1,9 +1,10 @@
-package org.wit.emergencyescape
+package org.wit.emergencyescape.activities
 
 import android.os.Bundle
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_main_screen.*
+import org.wit.emergencyescape.R
 
 class mainScreen : AppCompatActivity() {
 
