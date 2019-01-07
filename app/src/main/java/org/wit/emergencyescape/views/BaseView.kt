@@ -5,9 +5,9 @@ import android.os.Parcelable
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import org.jetbrains.anko.AnkoLogger
-import org.wit.emergencyescape.activities.mainScreen
 import org.wit.emergencyescape.views.login.LoginView
 import org.wit.emergencyescape.views.register.RegistrationView
+import org.wit.emergencyescape.views.location.LocationView
 import org.wit.emergencyescape.models.LocationModel
 
 enum class VIEW {
@@ -20,9 +20,9 @@ open abstract class BaseView() : AppCompatActivity(), AnkoLogger {
 
     // Navigate to a new activity
     fun navigateTo(view: VIEW, code: Int = 0, key: String = "", value: Parcelable? = null) {
-       var intent = Intent(this, mainScreen::class.java)
+       var intent = Intent(this, LocationView::class.java)
         when (view) {
-            VIEW.LOCATION -> intent = Intent(this, mainScreen::class.java)
+            VIEW.LOCATION -> intent = Intent(this, LocationView::class.java)
             VIEW.LOGIN -> intent = Intent(this, LoginView::class.java)
             VIEW.REGISTER -> intent = Intent(this, RegistrationView::class.java)
         }
