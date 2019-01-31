@@ -5,9 +5,11 @@ import android.view.Menu
 import android.view.MenuItem
 import kotlinx.android.synthetic.main.activity_registration.*
 import org.jetbrains.anko.AnkoLogger
+import org.jetbrains.anko.toast
 
 import org.wit.emergencyescape.R
 import org.wit.emergencyescape.views.BaseView
+import org.wit.emergencyescape.views.VIEW
 
 class RegistrationView : BaseView(), AnkoLogger {
 
@@ -28,6 +30,7 @@ class RegistrationView : BaseView(), AnkoLogger {
             val email = regEmail.text.toString()
             val password = regPassword.text.toString()
             presenter.doRegister(email, password)
+
         }
 
     }
@@ -36,6 +39,7 @@ class RegistrationView : BaseView(), AnkoLogger {
         when (item?.itemId) {
 
             R.id.reg_cancel -> {
+                navigateTo(VIEW.LOGIN)
                 finish()
             }
 

@@ -31,8 +31,10 @@ class LoginView : BaseView(), AnkoLogger {
             val email = logInEmail.text.toString()
             val password = logInPassword.text.toString()
             presenter.doLogIn(email, password)
+            }
+
         }
-    }
+
 
     override fun onOptionsItemSelected(item: MenuItem?): Boolean {
         when (item?.itemId) {
