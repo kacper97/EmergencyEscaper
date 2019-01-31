@@ -15,8 +15,8 @@
                 android:id="@+id/appBarLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/colorWhite"
-                android:textColor="@color/colorPrimary"
+                android:background="@color/colorPrimary"
+                app:titleTextColor="@color/colorWhite"
                 android:fitsSystemWindows="true"
                 app:elevation="0dip"
                 app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
@@ -25,7 +25,8 @@
                     android:id="@+id/toolbarLogIn"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    app:titleTextColor="@color/colorPrimary"/>
+                    app:titleTextColor="@color/colorWhite" android:visibility="visible"
+            />
         </com.google.android.material.appbar.AppBarLayout>
 
         <ScrollView
@@ -71,13 +72,13 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="16dp"
-                        android:background="@color/colorAccent"
+                        android:background="@color/colorPrimary"
                         android:paddingBottom="8dp"
                         android:paddingTop="8dp"
                         android:stateListAnimator="@null"
                         android:text="@string/button_login"
-                        android:textColor="@color/colorPrimary"
-                        android:textSize="16sp"/>
+                        android:textColor="@color/colorWhite"
+                        android:textSize="16sp" style="@style/Widget.AppCompat.Button"/>
 
                 <ProgressBar
                         android:id="@+id/progressBar"
