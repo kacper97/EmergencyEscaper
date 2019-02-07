@@ -1,5 +1,4 @@
 package org.wit.emergencyescape.views
-//same as lab
 import android.content.Intent
 import org.wit.emergencyescape.main.MainApp
 
