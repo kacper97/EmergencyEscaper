@@ -5,7 +5,7 @@ import org.jetbrains.anko.AnkoLogger
 import org.wit.emergencyescape.R
 import org.wit.emergencyescape.views.BaseView
 
-class LocationView : BaseView(), AnkoLogger {
+class ocationView : BaseView(), AnkoLogger {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

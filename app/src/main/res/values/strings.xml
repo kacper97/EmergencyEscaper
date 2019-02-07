@@ -12,4 +12,5 @@
     <string name="button_login">Log In</string>
     <string name="button_cancel">Cancel</string>
     <string name="loader_text">Welcome</string>
+    <string name="title_activity_map">Map</string>
 </resources>
