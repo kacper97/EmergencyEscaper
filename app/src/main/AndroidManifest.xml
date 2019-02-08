@@ -39,6 +39,8 @@
                 android:name=".views.location.MapsActivity"
                 android:label="@string/title_activity_maps">
         </activity>
+        <activity android:name=".activities.MainScreen">
+        </activity>
     </application>
 
 </manifest>

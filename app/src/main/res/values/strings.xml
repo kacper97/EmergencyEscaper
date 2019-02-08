@@ -14,4 +14,7 @@
     <string name="loader_text">Welcome</string>
     <string name="title_activity_map">Map</string>
     <string name="title_activity_maps">Map</string>
+    <string name="getMap">Get Map</string>
+    <string name="mainApp">Emergency Escapes</string>
+    <string name="getBuildingPlan">Get Building Plan</string>
 </resources>

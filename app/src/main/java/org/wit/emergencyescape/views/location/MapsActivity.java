@@ -19,6 +19,7 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import org.wit.emergencyescape.R;
+import org.wit.emergencyescape.models.LocationFireStore;
 
 import java.io.IOException;
 import java.util.List;
@@ -76,7 +77,9 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
+
             }
+
 
             @Override
             public void onStatusChanged(String provider, int status, Bundle extras) {
@@ -117,4 +120,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         super.onStop();
         locationManager.removeUpdates(locationListener);
     }
+
+
 }
