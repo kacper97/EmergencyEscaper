@@ -18,4 +18,5 @@
     <string name="mainApp">Emergency Escapes</string>
     <string name="getBuildingPlan">Get Building Plan</string>
     <string name="settings">Settings</string>
+    <string name="menu_settings_save">Save</string>
 </resources>

@@ -41,6 +41,8 @@
         </activity>
         <activity android:name=".activities.MainScreen">
         </activity>
+        <activity android:name=".SettingsPresenter">
+        </activity>
     </application>
 
 </manifest>

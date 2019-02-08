@@ -13,4 +13,5 @@ class Presenter(view: BaseView) : BasePresenter(view), AnkoLogger {
                 view?.navigateTo(VIEW.MAP)
             }
 
+
 }
