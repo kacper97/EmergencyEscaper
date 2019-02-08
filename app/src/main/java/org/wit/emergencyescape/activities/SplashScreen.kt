@@ -10,7 +10,7 @@ import org.wit.emergencyescape.views.login.LoginView
 
 class SplashActivity : AppCompatActivity() {
     private var mDelayHandler: Handler? = null
-    private val SPLASH_DELAY: Long = 3000 //3 seconds
+    private val SPLASH_DELAY: Long = 1500 //1,5 seconds
 
     internal val mRunnable: Runnable = Runnable {
         if (!isFinishing) {

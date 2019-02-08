@@ -17,4 +17,5 @@
     <string name="getMap">Get Map</string>
     <string name="mainApp">Emergency Escapes</string>
     <string name="getBuildingPlan">Get Building Plan</string>
+    <string name="settings">Settings</string>
 </resources>
