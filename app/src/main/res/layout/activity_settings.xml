@@ -53,7 +53,7 @@
                 android:textColor="@color/colorPrimaryDark"
                 android:textSize="14sp"/>
         <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/settings_passwordconfirm"
+                android:id="@+id/settings_passwordConfirm"
                 android:layout_width="374dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
