@@ -31,7 +31,7 @@ class LoginView : BaseView(), AnkoLogger {
             val email = logInEmail.text.toString()
             val password = logInPassword.text.toString()
             if (email == "" || password == "") {
-                toast("PLEASE ENTER AN EMAIL AND PASSWORD")
+                toast(R.string.hintEmailPassword)
             } else {
                 presenter.doLogIn(email, password)
             }

@@ -5,6 +5,7 @@ import android.view.Menu
 import android.view.MenuItem
 import kotlinx.android.synthetic.main.activity_settings.*
 import org.wit.emergencyescape.views.BaseView
+import org.wit.emergencyescape.views.VIEW
 
 
 class SettingsView : BaseView() {
@@ -19,9 +20,6 @@ class SettingsView : BaseView() {
 
         presenter = initPresenter (SettingsPresenter(this)) as SettingsPresenter
 
-        settings_email.setBackground(null)
-        settings_email.setKeyListener(null)
-
         settings_email.setText(presenter.auth.currentUser?.email)
     }
 
@@ -29,6 +27,17 @@ class SettingsView : BaseView() {
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.menu_settings, menu)
         return super.onCreateOptionsMenu(menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
+        when (item?.itemId) {
+
+            R.id.item_settings_save -> {
+                presenter.doSaveSettings(settings_email.toString(), settings_password.toString())
+            }
+
+        }
+        return super.onOptionsItemSelected(item)
     }
 
 

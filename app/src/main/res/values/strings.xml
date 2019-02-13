@@ -22,4 +22,6 @@
     <string name="map">Map</string>
     <string name="buildingPlan">Building Plan</string>
     <string name="todo">TODO</string>
+    <string name="hintEmailPassword">"PLEASE ENTER AN EMAIL AND PASSWORD"</string>
+    <string name="updatedPassword">Password Updated Correctly</string>
 </resources>

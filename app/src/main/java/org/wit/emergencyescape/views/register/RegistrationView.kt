@@ -23,16 +23,17 @@ class RegistrationView : BaseView(), AnkoLogger {
         toolbarRegister.title = getString(R.string.reg_title)
         setSupportActionBar(toolbarRegister)
 
-        presenter = initPresenter (RegistrationPresenter(this)) as RegistrationPresenter
+        presenter = initPresenter(RegistrationPresenter(this)) as RegistrationPresenter
 
         button_register.setOnClickListener {
-
             val email = regEmail.text.toString()
             val password = regPassword.text.toString()
-            presenter.doRegister(email, password)
-
+            if (email == "" || password == "") {
+                toast(R.string.hintEmailPassword)
+            } else {
+                presenter.doRegister(email, password)
+            }
         }
 
     }
-
 }
