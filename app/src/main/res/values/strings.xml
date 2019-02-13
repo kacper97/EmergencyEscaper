@@ -22,4 +22,8 @@
     <string name="todo">TODO</string>
     <string name="hintEmailPassword">"PLEASE ENTER AN EMAIL AND PASSWORD"</string>
     <string name="updatedPassword">Password Updated Correctly</string>
+    <string name="hint_passwordCurrent"> Current Password</string>
+    <string name="hint_passwordNew">New Password</string>
+    <string name="currentPassword">Please enter your current password</string>
+    <string name="confirmPassword">Please enter your password again</string>
 </resources>

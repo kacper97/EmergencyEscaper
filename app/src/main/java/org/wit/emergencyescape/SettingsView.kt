@@ -21,6 +21,7 @@ class SettingsView : BaseView() {
         presenter = initPresenter (SettingsPresenter(this)) as SettingsPresenter
 
         settings_email.setText(presenter.auth.currentUser?.email)
+
     }
 
 
@@ -33,7 +34,7 @@ class SettingsView : BaseView() {
         when (item?.itemId) {
 
             R.id.item_settings_save -> {
-                presenter.doSaveSettings(settings_email.toString(), settings_password.toString())
+                presenter.doSaveSettings(settings_email.toString(),password.toString(),settings_password.toString(), settings_passwordConfirm.toString())
             }
 
         }

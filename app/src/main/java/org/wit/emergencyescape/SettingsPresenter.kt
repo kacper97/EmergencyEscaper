@@ -14,8 +14,13 @@ class SettingsPresenter(view: BaseView) : BasePresenter(view) {
     var auth: FirebaseAuth = FirebaseAuth.getInstance()
     private val user =  FirebaseAuth.getInstance().currentUser
 
-    fun doSaveSettings(settings_email: String, settings_password: String) {
-
+    fun doSaveSettings(settings_email: String,password: String, settings_password: String, settings_passwordConfirm: String) {
+        if (password.isEmpty()){
+            view?.toast(R.string.currentPassword)
+        }
+        if (settings_passwordConfirm.isEmpty() || settings_passwordConfirm != settings_password){
+            view?.toast(R.string.confirmPassword)
+        }
         if (settings_email.isEmpty() || settings_password.isEmpty()) {
             view?.toast(R.string.hintEmailPassword)
         } else user!!.updatePassword(settings_password).addOnCompleteListener {
