@@ -9,9 +9,15 @@ import org.wit.emergencyescape.views.VIEW
 
 class Presenter(view: BaseView) : BasePresenter(view), AnkoLogger {
 
-            fun doNavigate(){
+            fun doNavigateMaps(){
                 view?.navigateTo(VIEW.MAP)
             }
+
+         fun doNavigateBuildingPlan(){
+             view?.navigateTo(VIEW.BUILDINGPLAN)
+             }
+
+
 
 
 }

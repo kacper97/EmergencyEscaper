@@ -29,8 +29,12 @@ import org.wit.emergencyescape.views.VIEW
 
 
          buttonGetMap.setOnClickListener() {
-             presenter.doNavigate()
+             presenter.doNavigateMaps()
          }
+         buttonGetBuildingPlan.setOnClickListener(){
+             presenter.doNavigateBuildingPlan()
+         }
+
      }
 
      override fun onCreateOptionsMenu(menu: Menu?): Boolean {

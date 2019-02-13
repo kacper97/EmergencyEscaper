@@ -19,11 +19,17 @@ class SettingsView : BaseView() {
 
         presenter = initPresenter (SettingsPresenter(this)) as SettingsPresenter
 
-
         settings_email.setBackground(null)
         settings_email.setKeyListener(null)
 
         settings_email.setText(presenter.auth.currentUser?.email)
     }
+
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.menu_settings, menu)
+        return super.onCreateOptionsMenu(menu)
+    }
+
 
 }
