@@ -29,10 +29,11 @@ import org.wit.emergencyescape.views.VIEW
 
 
          buttonGetMap.setOnClickListener() {
-             presenter.doNavigateMaps()
+             presenter.doNavigate()
          }
+
          buttonGetBuildingPlan.setOnClickListener(){
-             presenter.doNavigateBuildingPlan()
+             presenter.doNavigatePlan()
          }
 
      }

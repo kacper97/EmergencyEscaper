@@ -2,11 +2,11 @@ package org.wit.emergencyescape.views
 
 import android.content.Intent
 import android.os.Parcelable
-import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import org.jetbrains.anko.AnkoLogger
 import org.wit.emergencyescape.SettingsView
+import org.wit.emergencyescape.activities.BuildingPlan
 import org.wit.emergencyescape.activities.MainScreen
 import org.wit.emergencyescape.views.login.LoginView
 import org.wit.emergencyescape.views.register.RegistrationView
@@ -15,7 +15,7 @@ import org.wit.emergencyescape.models.LocationModel
 import org.wit.emergencyescape.views.location.MapsActivity
 
 enum class VIEW {
-    LOCATION, LOGIN, REGISTER, MAP, SETTINGS,BUILDINGPLAN
+    LOCATION, LOGIN, REGISTER, MAP, SETTINGS, PLAN
 }
 
 open abstract class BaseView() : AppCompatActivity(), AnkoLogger {
@@ -31,7 +31,7 @@ open abstract class BaseView() : AppCompatActivity(), AnkoLogger {
             VIEW.REGISTER -> intent = Intent(this, RegistrationView::class.java)
             VIEW.MAP -> intent = Intent(this, MapsActivity::class.java)
             VIEW.SETTINGS -> intent = Intent(this, SettingsView::class.java)
-            VIEW.BUILDINGPLAN -> intent = Intent(this, ImageView::class.java)
+            VIEW.PLAN -> intent = Intent(this, BuildingPlan::class.java)
         }
         if (key != "") {
             intent.putExtra(key, value)

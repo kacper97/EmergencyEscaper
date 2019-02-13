@@ -4,10 +4,11 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import org.wit.emergencyescape.R
 
-class ImageView : AppCompatActivity() {
+class BuildingPlan : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_image_view)
+        setContentView(
+            R.layout.activity_buildingplan)
     }
 }

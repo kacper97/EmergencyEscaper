@@ -24,7 +24,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     app:titleTextColor="@color/colorWhite"
-            />
+                    app:title="@string/map"/>
         </com.google.android.material.appbar.AppBarLayout>
     </RelativeLayout>
 
