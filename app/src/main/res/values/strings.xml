@@ -24,6 +24,6 @@
     <string name="updatedPassword">Password Updated Correctly</string>
     <string name="hint_passwordCurrent"> Current Password</string>
     <string name="hint_passwordNew">New Password</string>
-    <string name="currentPassword">Please enter your current password</string>
-    <string name="confirmPassword">Please enter your password again</string>
+    <string name="passwords_not_same"> Please enter new passwords that are the same</string>
+    <string name="emptyBoxes">Please fill in all the boxes please</string>
 </resources>

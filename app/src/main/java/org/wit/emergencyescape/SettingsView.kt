@@ -3,6 +3,7 @@ package org.wit.emergencyescape
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import kotlinx.android.synthetic.main.activity_login.*
 import kotlinx.android.synthetic.main.activity_settings.*
 import org.wit.emergencyescape.views.BaseView
 import org.wit.emergencyescape.views.VIEW
@@ -22,6 +23,14 @@ class SettingsView : BaseView() {
 
         settings_email.setText(presenter.auth.currentUser?.email)
 
+        button_settings_save.setOnClickListener(){
+            presenter.doSaveSettings(
+                settings_email.toString(),
+                password.toString(),
+                settings_password.toString(),
+                settings_passwordConfirm.toString()
+            )
+        }
     }
 
 
@@ -34,7 +43,12 @@ class SettingsView : BaseView() {
         when (item?.itemId) {
 
             R.id.item_settings_save -> {
-                presenter.doSaveSettings(settings_email.toString(),password.toString(),settings_password.toString(), settings_passwordConfirm.toString())
+                presenter.doSaveSettings(
+                    settings_email.toString(),
+                    password.toString(),
+                    settings_password.toString(),
+                    settings_passwordConfirm.toString()
+                )
             }
 
         }

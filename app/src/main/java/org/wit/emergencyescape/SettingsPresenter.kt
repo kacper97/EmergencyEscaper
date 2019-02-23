@@ -15,19 +15,25 @@ class SettingsPresenter(view: BaseView) : BasePresenter(view) {
     private val user =  FirebaseAuth.getInstance().currentUser
 
     fun doSaveSettings(settings_email: String,password: String, settings_password: String, settings_passwordConfirm: String) {
-        if (password.isEmpty()){
-            view?.toast(R.string.currentPassword)
-        }
-        if (settings_passwordConfirm.isEmpty() || settings_passwordConfirm != settings_password){
-            view?.toast(R.string.confirmPassword)
-        }
-        if (settings_email.isEmpty() || settings_password.isEmpty()) {
-            view?.toast(R.string.hintEmailPassword)
-        } else user!!.updatePassword(settings_password).addOnCompleteListener {
-            user.updateEmail(settings_email)
-            view?.toast(R.string.updatedPassword)
-            view?.setResult(AppCompatActivity.RESULT_OK)
+        if (settings_email.isEmpty() || password.isEmpty() || settings_password.isEmpty() || settings_passwordConfirm.isEmpty()) {
+            view?.toast(R.string.emptyBoxes)
             view?.finish()
+
+
+        }
+            else if (settings_password != settings_passwordConfirm) {
+                view?.toast(R.string.passwords_not_same)
+                view?.finish()
+            }
+
+        else{
+            user!!.updatePassword(settings_password).addOnCompleteListener {
+                user.updatePassword(settings_password)
+                auth.updateCurrentUser(user)
+                view?.toast(R.string.updatedPassword)
+                view?.setResult(AppCompatActivity.RESULT_OK)
+                view?.finish()
+            }
         }
     }
 
