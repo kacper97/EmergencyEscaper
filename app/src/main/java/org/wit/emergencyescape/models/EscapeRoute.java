@@ -1,6 +1,5 @@
 package org.wit.emergencyescape.models.;
 
-
 import java.util.Hashtable;
 import java.util.Iterator;
 import java.util.Map;
