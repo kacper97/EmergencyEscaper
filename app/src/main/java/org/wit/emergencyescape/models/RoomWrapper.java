@@ -1,4 +1,4 @@
-package org.wit.emergencyescape.models.;
+package org.wit.emergencyescape.models;
 
 
 public class RoomWrapper implements Comparable<RoomWrapper> {

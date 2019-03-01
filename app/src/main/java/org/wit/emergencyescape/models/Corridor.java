@@ -1,4 +1,4 @@
-package org.wit.emergencyescape.models.;
+package org.wit.emergencyescape.models;
 
 import java.util.*;
 

@@ -6,10 +6,10 @@ import java.util.Map;
 import java.util.Map.Entry;
 import java.util.PriorityQueue;
 
-public class EscapeRoute {
+public class RouteCalculator {
     private Map map_;
 
-    public EscapeRoute(Map map) {
+    public RouteCalculator(Map map) {
         map_ = map;
     }
 
@@ -51,7 +51,7 @@ public class EscapeRoute {
         }
         // TODO What if exitingCorridor = null && currentWrapRoom == null which means that no way out exists
         // Construct escape route and return it
-        return (exitingCorridor == null) ? new EscapeRoute(currentWrapRoom) : new EscapeRoute(currentWrapRoom,exitingCorridor);
+      return (exitingCorridor == null) ? new EscapeRoute(currentWrapRoom) : new EscapeRoute(currentWrapRoom,exitingCorridor);
     }
 
     // Returns beginnig
