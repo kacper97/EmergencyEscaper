@@ -2,13 +2,13 @@ package org.wit.emergencyescape.models;
 
 import java.util.Hashtable;
 import java.util.Iterator;
-import java.util.Map.Entry;
+
 import java.util.PriorityQueue;
 
 public class RouteCalculator {
-    private model.Map map_;
+    private Map map_;
 
-    public RouteCalculator(model.Map map) {
+    public RouteCalculator(Map map) {
         map_ = map;
     }
 
@@ -30,12 +30,12 @@ public class RouteCalculator {
             currentWrapRoom.getRoom().increaseFullness();
             if (currentWrapRoom.getPreviousCorridor() != null) currentWrapRoom.getPreviousCorridor().increaseFullness();
 
-            Iterator<Entry<Integer, Corridor>> corridorIterator = currentWrapRoom.getRoom().getCorridors().entrySet().iterator();
+            Iterator<java.util.Map.Entry<Integer, Corridor>> corridorIterator = currentWrapRoom.getRoom().getCorridors().entrySet().iterator();
             while (corridorIterator.hasNext()) {
                 Corridor corridor = corridorIterator.next().getValue();
                 if(corridor.isFull()) continue; // This ensures, that we'll never take into consideration rooms that are connected only by full corridors
                 if(corridor.hasExit()) { exitingCorridor = corridor; break; } // We can escape via this corridor -> TODO better to add separate exits to those corridors
-                Iterator<Entry<Integer, Room>> neighbourIterator = corridor.getRooms().entrySet().iterator();
+                Iterator<java.util.Map.Entry<Integer, Room>> neighbourIterator = corridor.getRooms().entrySet().iterator();
                 while (neighbourIterator.hasNext()) { // If the corridor is ok look at all neighbours of currentWrapp room and consider adding as candidates
                     Room neighbour = neighbourIterator.next().getValue();
                     RoomWrapper neighbourWrap = allWrapRooms.get(neighbour.getID());
@@ -57,7 +57,7 @@ public class RouteCalculator {
     public RoomWrapper addAllRoomsAndSetBeginning(int fromLocation,PriorityQueue<RoomWrapper> candidates,Hashtable<Integer,RoomWrapper> allWrapRooms) {
         // Add all of the rooms to candidate queue
         RoomWrapper currentWrapRoom = null;
-        Iterator<Entry<Integer, Room>> roomIterator = map_.getRooms().entrySet().iterator();
+        Iterator<java.util.Map.Entry<Integer, Room>> roomIterator = map_.getRooms().entrySet().iterator();
         while (roomIterator.hasNext()) {
             Room room = roomIterator.next().getValue();
             if (room.getID() == fromLocation) {		// Get the starting room and add all rooms in the building in wrapper to hash set to preprocess them before the computation

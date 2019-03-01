@@ -1,4 +1,4 @@
-package model;
+package org.wit.emergencyescape.models;
 
 import org.wit.emergencyescape.models.Corridor;
 import org.wit.emergencyescape.models.Room;
