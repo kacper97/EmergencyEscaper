@@ -2,14 +2,13 @@ package org.wit.emergencyescape.models;
 
 import java.util.Hashtable;
 import java.util.Iterator;
-import java.util.Map;
 import java.util.Map.Entry;
 import java.util.PriorityQueue;
 
 public class RouteCalculator {
-    private Map map_;
+    private model.Map map_;
 
-    public RouteCalculator(Map map) {
+    public RouteCalculator(model.Map map) {
         map_ = map;
     }
 
@@ -51,7 +50,7 @@ public class RouteCalculator {
         }
         // TODO What if exitingCorridor = null && currentWrapRoom == null which means that no way out exists
         // Construct escape route and return it
-      return (exitingCorridor == null) ? new EscapeRoute(currentWrapRoom) : new EscapeRoute(currentWrapRoom,exitingCorridor);
+        return (exitingCorridor == null) ? new EscapeRoute(currentWrapRoom) : new EscapeRoute(currentWrapRoom,exitingCorridor);
     }
 
     // Returns beginnig

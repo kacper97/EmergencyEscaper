@@ -1,7 +1,8 @@
 package org.wit.emergencyescape.arduino;
 //Src
 //http://www.drdobbs.com/jvm/control-an-arduino-from-java/240163864
- public class Arduino {
+/*
+public class Arduino {
 
     private static final String PORT_NAMES[] = {
             "/dev/tty.usbmodem", // Mac OS X
@@ -28,3 +29,4 @@ while (portId == null && portEnum.hasMoreElements()) {
     }
 
 }
+*/
