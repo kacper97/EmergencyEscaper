@@ -13,28 +13,22 @@
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
         <activity
-                android:name=".activities.SplashScreen"
-                android:theme="@style/AppTheme">
+                android:name=".activities.SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
-
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
         <activity
-                android:name=".activities.LogIn"
-                android:windowSoftInputMode="stateHidden"/>
+                android:name=".activities.LogIn"/>
         <activity
-                android:name=".activities.Register"
-                android:windowSoftInputMode="stateHidden"/>
-
+                android:name=".activities.Register"/>
         <meta-data
                 android:name="com.google.android.geo.API_KEY"
                 android:value="@string/google_maps_key"/>
         <meta-data
                 android:name="com.google.android.gms.version"
                 android:value="@integer/google_play_services_version"/>
-
         <activity
                 android:name=".activities.MapsActivity"
                 android:label="@string/title_activity_maps">
