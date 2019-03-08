@@ -7,6 +7,19 @@
                                              android:background="@color/colorAccent"
                                              tools:context=".activities.Register">
 
+
+    <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="433dp"
+            android:layout_height="249dp"
+            android:layout_marginEnd="6dp"
+            android:background="@color/colorAccent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.421"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:src="@drawable/logoescape"/>
+
     <EditText
             android:id="@+id/registeremail"
             android:layout_width="399dp"
@@ -46,19 +59,6 @@
             app:layout_constraintHorizontal_bias="0.483"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/registeremail" />
-
-    <ImageView
-            android:id="@+id/imageView2"
-            android:layout_width="433dp"
-            android:layout_height="249dp"
-            android:layout_marginEnd="8dp"
-            android:background="@color/colorAccent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.421"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:srcCompat="@drawable/splashextra"/>
-
     <Button
             android:id="@+id/register"
             android:layout_width="0dp"

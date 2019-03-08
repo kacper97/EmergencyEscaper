@@ -26,7 +26,8 @@ public class BluetoothConnector extends Activity implements OnClickListener {
     BluetoothAdapter myBluetooth = null;
     BluetoothSocket btSocket = null;
     Set<BluetoothDevice> pairedDevices;
-    static final UUID myUUID = UUID.fromString("HERE ENTER ADDRESS FROM BLUETOOTH PAIRING _ NOT YET COMPLETED");
+    // number from my bluetooth module below- entered random number below to debug
+    static final UUID myUUID = UUID.fromString("00001101-0000-1000-8000-00805F9B34FB");
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
