@@ -1,10 +1,11 @@
-package org.wit.emergencyescape.views.location;
+package org.wit.emergencyescape.activities;
 
 
 import android.Manifest;
 import android.content.pm.PackageManager;
 import android.location.*;
 import android.os.Bundle;
+import android.widget.TextView;
 import android.widget.Toolbar;
 import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.FragmentActivity;
@@ -16,6 +17,7 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import org.jetbrains.anko.AnkoLogger;
+import org.w3c.dom.Text;
 import org.wit.emergencyescape.R;
 
 import java.io.IOException;
@@ -28,6 +30,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     private static final int REQUEST_LOCATION_PERMISSION = 1;
     Marker marker;
     LocationListener locationListener;
+    TextView txtview;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,11 +48,13 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                             {Manifest.permission.ACCESS_FINE_LOCATION},
                     REQUEST_LOCATION_PERMISSION);
         }
+        txtview= (TextView) findViewById(R.id.latlng);
         locationListener = new LocationListener() {
             @Override
             public void onLocationChanged(Location location) {
                 double latitude = location.getLatitude();
                 double longitude = location.getLongitude();
+                txtview.setText("Latitude = "+latitude+", Longitude = "+ longitude);
                 //get the location name from latitude and longitude
                 Geocoder geocoder = new Geocoder(getApplicationContext());
                 try {

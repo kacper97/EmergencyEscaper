@@ -3,7 +3,7 @@
              android:layout_width="match_parent"
              android:layout_height="match_parent"
              android:background="#ffffff"
-             tools:context="org.wit.emergencyescape.activities.SplashActivity">
+             tools:context="org.wit.emergencyescape.activities.SplashScreen">
 
     <TextView
             android:id="@+id/fullscreen_content"
@@ -19,5 +19,5 @@
     <ImageView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:src="@drawable/ios_splash" />
+            android:src="@drawable/ios_splash" android:id="@+id/imageview"/>
 </FrameLayout>
