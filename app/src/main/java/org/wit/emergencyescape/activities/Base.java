@@ -14,7 +14,6 @@ import org.wit.emergencyescape.main.MainApp;
 
 public class Base extends AppCompatActivity {
     public MainApp app;
-    public Bundle activityInfo; // Used for persistence (of sorts)
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

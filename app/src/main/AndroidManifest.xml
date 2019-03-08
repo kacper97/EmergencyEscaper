@@ -23,6 +23,8 @@
                 android:name=".activities.LogIn"/>
         <activity
                 android:name=".activities.Register"/>
+        <activity
+                android:name=".activities.Help"/>
         <meta-data
                 android:name="com.google.android.geo.API_KEY"
                 android:value="@string/google_maps_key"/>

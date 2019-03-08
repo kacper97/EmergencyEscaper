@@ -44,5 +44,5 @@
             android:id="@+id/buttonGetBuildingPlan"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintHorizontal_bias="1.0" android:layout_marginTop="8dp"
-            app:layout_constraintTop_toBottomOf="@+id/buttonGetMap"/>
+            app:layout_constraintTop_toBottomOf="@+id/buttonGetMap" android:onClick="buildingplan"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
