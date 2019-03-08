@@ -28,6 +28,9 @@ public class Home extends Base {
         startActivity(new Intent(this,BuildingPlan.class));
     }
 
+    public void bluetooth(View v) {
+        startActivity(new Intent(this,BluetoothConnector.class));
+    }
 
 
 }

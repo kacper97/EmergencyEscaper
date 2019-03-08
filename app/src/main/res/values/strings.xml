@@ -40,4 +40,6 @@
     <string name="appHelpExtraRate">-To rate a place, please put in a star rating for a specific place</string>
     <string name="appHelp">This is the help screen for Polish Landmarks</string>
     <string name="appHelpExtraAdd">-To add a place, please put in a new place</string>
+    <string name="getbluetooth"> Bluetooth arduino </string>
+    <string name="bluetoothaddress">Bluetooth Address</string>
 </resources>
