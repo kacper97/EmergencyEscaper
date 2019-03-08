@@ -5,32 +5,32 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".activities.BuildingPlan">
+        tools:context=".activities.BuildingPlan" android:background="@drawable/ggf">
 
-        <RelativeLayout
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:id="@+id/relativeLayout">
+
+        <com.google.android.material.appbar.AppBarLayout
+                android:id="@+id/appBarLayout"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" android:id="@+id/relativeLayout">
+                android:layout_height="wrap_content"
+                android:background="@color/colorPrimary"
+                android:fitsSystemWindows="true"
+                app:elevation="0dip"
+                app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
 
-            <com.google.android.material.appbar.AppBarLayout
-                    android:id="@+id/appBarLayout"
+            <androidx.appcompat.widget.Toolbar
+                    android:id="@+id/toolbarImage"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@color/colorPrimary"
-                    android:fitsSystemWindows="true"
-                    app:elevation="0dip"
-                    app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
-
-                <androidx.appcompat.widget.Toolbar
-                        android:id="@+id/toolbarImage"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        app:titleTextColor="@color/colorWhite"
-                        app:title="@string/buildingPlan"/>
-            </com.google.android.material.appbar.AppBarLayout>
-        </RelativeLayout>
+                    app:titleTextColor="@color/colorWhite"
+                    app:title="@string/buildingPlan"/>
+        </com.google.android.material.appbar.AppBarLayout>
+    </RelativeLayout>
     <ImageView
             android:layout_width="417dp"
-            android:layout_height="595dp"
+            android:layout_height="508dp"
             app:srcCompat="@drawable/plan"
             android:id="@+id/buildingPlan"
             android:layout_marginTop="12dp"
@@ -38,5 +38,6 @@
             app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginEnd="8dp" app:layout_constraintStart_toStartOf="parent"
             android:layout_marginStart="8dp" app:layout_constraintHorizontal_bias="0.489"
-            android:contentDescription="@string/todo"/>
+            android:contentDescription="@string/todo" android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -34,6 +34,7 @@
     <string name="info">Information</string>
     <string name="signOut">Log Out</string>
     <string name="appAbout">About Escaper</string>
+    <string name="changePassword">Change Password</string>
     <string name="appDesc">App shows emergency escapes and sounds alarm</string>
     <string name="appMoreInfo">For more information about Polish Landmarks application or to provide feedback email :
         kacperwoloszyn4@gmail.com
@@ -50,4 +51,5 @@
     </string>
     <string name="getbluetooth">Bluetooth arduino</string>
     <string name="bluetoothaddress">Bluetooth Address</string>
+    <string name="deactivate">Deactivate Account</string>
 </resources>

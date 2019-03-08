@@ -1,6 +1,5 @@
 package org.wit.emergencyescape.activities;
 
-import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -49,8 +48,10 @@ public class Base extends AppCompatActivity {
         startActivity(new Intent(this,Help.class));
     }
 
-    public void menuSettings(MenuItem m)
+    public void menuChangePassword(MenuItem m)
     {
-        startActivity(new Intent(this, Settings.class));
+        startActivity(new Intent(this, ChangePassword.class));
     }
+
+    public void menudeactivate(MenuItem m){startActivity(new Intent(this, Deactivate.class));}
 }

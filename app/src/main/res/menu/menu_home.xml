@@ -15,16 +15,17 @@
           android:onClick="menuInfo"
           app:showAsAction="never" />
 
-    <item android:id="@+id/menu_SignOut"
-          android:title="@string/signOut"
-          android:orderInCategory="100"
-          android:onClick="menuInfo"
-          app:showAsAction="never" />
+    <item
+            android:id="@+id/menu_changePassword"
+            android:title="@string/changePassword"
+            android:orderInCategory="100"
+            android:onClick="menuChangePassword"
+            app:showAsAction="never"/>
 
     <item
-            android:id="@+id/menu_settings"
-            android:title="@string/settings"
+            android:id="@+id/menu_deactivate"
+            android:title="@string/deactivate"
             android:orderInCategory="100"
-            android:onClick="menuSettings"
+            android:onClick="menudeactivate"
             app:showAsAction="never"/>
 </menu>

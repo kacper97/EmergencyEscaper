@@ -41,7 +41,9 @@
         </activity>
         <activity android:name=".activities.BluetoothConnector">
         </activity>
-        <activity android:name=".activities.Settings">
+        <activity android:name=".activities.ChangePassword">
+        </activity>
+        <activity android:name=".activities.Deactivate">
         </activity>
     </application>
 
