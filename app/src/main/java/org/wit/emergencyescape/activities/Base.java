@@ -27,9 +27,6 @@ public class Base extends AppCompatActivity {
         return true;
     }
 
-    public void menuHome(MenuItem m) {
-        startActivity(new Intent(this, Home.class));
-    }
 
     public void menuInfo(MenuItem m)
     {
@@ -50,5 +47,10 @@ public class Base extends AppCompatActivity {
     public void menuHelp(MenuItem m)
     {
         startActivity(new Intent(this,Help.class));
+    }
+
+    public void menuSettings(MenuItem m)
+    {
+        startActivity(new Intent(this, Settings.class));
     }
 }

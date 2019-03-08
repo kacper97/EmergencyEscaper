@@ -22,24 +22,32 @@
     <string name="todo">TODO</string>
     <string name="hintEmailPassword">"PLEASE ENTER AN EMAIL AND PASSWORD"</string>
     <string name="updatedPassword">Password Updated Correctly</string>
-    <string name="hint_passwordCurrent"> Current Password</string>
+    <string name="hint_passwordCurrent">Current Password</string>
     <string name="hint_passwordNew">New Password</string>
-    <string name="passwords_not_same"> Please enter new passwords that are the same</string>
+    <string name="passwords_not_same">Please enter new passwords that are the same</string>
     <string name="emptyBoxes">Please fill in all the boxes please</string>
     <string name="regBtn">Don\'t have an account ? Sign up</string>
     <string name="logBtn">Already have an account ? Log In</string>
-    <string name="loginBtn">Login </string>
+    <string name="loginBtn">Login</string>
     <string name="registerBtn">Register</string>
     <string name="help">Help</string>
     <string name="info">Information</string>
     <string name="signOut">Log Out</string>
-    <string name="appAbout"> About Escaper</string>
+    <string name="appAbout">About Escaper</string>
     <string name="appDesc">App shows emergency escapes and sounds alarm</string>
-    <string name="appMoreInfo">For more information about Polish Landmarks application or to provide feedback email : kacperwoloszyn4@gmail.com</string>
-    <string name="appHelpExtraRemove">-To remove a place, please hold a place you want to delete and press confirm right corner</string>
-    <string name="appHelpExtraRate">-To rate a place, please put in a star rating for a specific place</string>
+    <string name="appMoreInfo">For more information about Polish Landmarks application or to provide feedback email :
+        kacperwoloszyn4@gmail.com
+    </string>
+    <string name="appHelpExtraRemove">When an emergency happens, the arduino is going to either buzz the alarm or pick
+        up the sound of the microphone. When that occurs, an emergency route will be drawn.
+    </string>
+    <string name="appHelpExtraRate">If the location is on, you will see location latitude and longitude and based on
+        that a building plan will be downloaded
+    </string>
     <string name="appHelp">This is the help screen for Polish Landmarks</string>
-    <string name="appHelpExtraAdd">-To add a place, please put in a new place</string>
-    <string name="getbluetooth"> Bluetooth arduino </string>
+    <string name="appHelpExtraAdd">Turn on the location option on your device so that the application will see where you
+        are now
+    </string>
+    <string name="getbluetooth">Bluetooth arduino</string>
     <string name="bluetoothaddress">Bluetooth Address</string>
 </resources>
