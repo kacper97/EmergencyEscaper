@@ -65,7 +65,9 @@ public class BluetoothConnector extends Activity implements OnClickListener {
             {
                 for(BluetoothDevice bt : pairedDevices)
                 {
-                    address=bt.getAddress().toString();name = bt.getName().toString();
+                    address=bt.getAddress();
+                    name = bt.getName();
+                    t1.setText(address );
                     Toast.makeText(getApplicationContext(),"Connected", Toast.LENGTH_SHORT).show();
                 }
             }
