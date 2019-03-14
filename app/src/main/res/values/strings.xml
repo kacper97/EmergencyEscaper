@@ -52,4 +52,5 @@
     <string name="getbluetooth">Bluetooth arduino</string>
     <string name="bluetoothaddress">Bluetooth Address</string>
     <string name="deactivate">Deactivate Account</string>
+    <string name="welcome">Welcome</string>
 </resources>
