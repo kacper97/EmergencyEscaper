@@ -53,7 +53,7 @@ public class RouteCalculator {
         return (exitingCorridor == null) ? new EscapeRoute(currentWrapRoom) : new EscapeRoute(currentWrapRoom,exitingCorridor);
     }
 
-    // Returns beginnig
+    // Returns beginning
     public RoomWrapper addAllRoomsAndSetBeginning(int fromLocation,PriorityQueue<RoomWrapper> candidates,Hashtable<Integer,RoomWrapper> allWrapRooms) {
         // Add all of the rooms to candidate queue
         RoomWrapper currentWrapRoom = null;
