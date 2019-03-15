@@ -4,6 +4,7 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -16,7 +17,7 @@ import com.google.firebase.auth.FirebaseUser;
 import org.wit.emergencyescape.R;
 
 public class ChangePassword extends AppCompatActivity {
-    EditText email;
+    TextView email;
     EditText password;
     FirebaseAuth auth;
     ProgressDialog dialog;
@@ -29,8 +30,9 @@ public class ChangePassword extends AppCompatActivity {
         setSupportActionBar(toolbar);
         dialog = new ProgressDialog(this);
         password = (EditText) findViewById(R.id.settings_password);
-        email = (EditText)findViewById(R.id.settings_email);
+        email = (TextView)findViewById(R.id.settings_email);
         auth = FirebaseAuth.getInstance();
+        email.setText(FirebaseAuth.getInstance().getCurrentUser().getEmail());
     }
 
     public void change(View V){
@@ -38,7 +40,6 @@ public class ChangePassword extends AppCompatActivity {
         if (user!=null){
             dialog.setMessage("Changing password, please wait");
             dialog.show();
-            user.getEmail();
             user.updatePassword(password.getText().toString())
                     .addOnCompleteListener(new OnCompleteListener<Void>() {
                         @Override

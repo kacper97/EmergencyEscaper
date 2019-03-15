@@ -55,4 +55,6 @@
     <string name="welcome">Welcome</string>
     <string name="bluetooth">Bluetooth Connection To Arduino</string>
     <string name="bluetoothname"> Name of Device: </string>
+    <string name="email"> Email :</string>
+    <string name="password"> New Password :</string>
 </resources>
