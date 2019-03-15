@@ -50,7 +50,9 @@
         are now
     </string>
     <string name="getbluetooth">Bluetooth arduino</string>
-    <string name="bluetoothaddress">Bluetooth Address</string>
+    <string name="bluetoothaddress">Bluetooth Address: </string>
     <string name="deactivate">Deactivate Account</string>
     <string name="welcome">Welcome</string>
+    <string name="bluetooth">Bluetooth Connection To Arduino</string>
+    <string name="bluetoothname"> Name of Device: </string>
 </resources>

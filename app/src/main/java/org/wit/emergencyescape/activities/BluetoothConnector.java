@@ -21,13 +21,14 @@ public class BluetoothConnector extends Activity implements OnClickListener {
 
     Button i1;
     TextView t1;
-
+    TextView t2;
     String address = null , name=null;
     BluetoothAdapter myBluetooth = null;
     BluetoothSocket btSocket = null;
     Set<BluetoothDevice> pairedDevices;
-    // number from my bluetooth module below- entered random number below to debug
-    static final UUID myUUID = UUID.fromString("00001101-0000-1000-8000-00805F9B34FB");
+    // uuid
+    //password for pairing was 123456
+    static final UUID myUUID = UUID.fromString("0000FFE7-0000-1000-8000-00805F9B34FB");
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -41,6 +42,7 @@ public class BluetoothConnector extends Activity implements OnClickListener {
     private void setw() throws IOException
     {
         t1=(TextView)findViewById(R.id.textView1);
+        t2=(TextView)findViewById(R.id.textView2);
         bluetooth_connect_device();
 
         i1=(Button)findViewById(R.id.button1);
@@ -65,13 +67,13 @@ public class BluetoothConnector extends Activity implements OnClickListener {
             {
                 for(BluetoothDevice bt : pairedDevices)
                 {
-                    address=bt.getAddress();
-                    name = bt.getName();
-                    t1.setText(address );
+                    address= bt.getAddress();
+                    name = bt.getName().toString();
+                    t1.setText(address);
+                    t2.setText(name);
                     Toast.makeText(getApplicationContext(),"Connected", Toast.LENGTH_SHORT).show();
                 }
             }
-
         }
         catch(Exception e){
         }
@@ -88,12 +90,10 @@ public class BluetoothConnector extends Activity implements OnClickListener {
     {
         try
         {
-
         }
         catch (Exception e)
         {
             Toast.makeText(getApplicationContext(),e.getMessage(), Toast.LENGTH_SHORT).show();
-
         }
 
     }
