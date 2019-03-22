@@ -38,5 +38,6 @@
             android:layout_marginEnd="8dp" app:layout_constraintStart_toStartOf="parent"
             android:layout_marginStart="8dp" app:layout_constraintHorizontal_bias="0.489"
             android:contentDescription="@string/todo" android:layout_marginBottom="8dp"
-            app:layout_constraintBottom_toBottomOf="parent" android:onClick="drawRoute"/>
+            app:layout_constraintBottom_toBottomOf="parent"
+    />
 </androidx.constraintlayout.widget.ConstraintLayout>

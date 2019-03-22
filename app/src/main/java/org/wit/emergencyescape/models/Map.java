@@ -1,8 +1,5 @@
 package org.wit.emergencyescape.models;
 
-import org.wit.emergencyescape.models.Corridor;
-import org.wit.emergencyescape.models.Room;
-
 import java.util.Hashtable;
 public class Map {
     private String name_;

@@ -2,12 +2,9 @@ package org.wit.emergencyescape.activities;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.widget.ImageView;
 import androidx.appcompat.app.AppCompatActivity;
-import com.mxgraph.swing.mxGraphComponent;
-import com.mxgraph.view.mxGraph;
 import org.wit.emergencyescape.R;
 import org.wit.emergencyescape.models.*;
 
@@ -18,9 +15,11 @@ import java.util.Iterator;
 public class  BuildingPlan extends AppCompatActivity {
 
     private Map map;
-    private mxGraph graph = null;
+
+   // private Graph graph = null;
     File imgFile = new File("Resources/plan.png");
     ImageView buildingplan;
+    public static String img = "Resources/plan.png";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +28,7 @@ public class  BuildingPlan extends AppCompatActivity {
         MainMap mainMap = new MainMap();
         mainMap.showMap();
         buildingplan = (ImageView) findViewById(R.id.buildingPlan);
+
     }
 
 
@@ -43,7 +43,8 @@ public class  BuildingPlan extends AppCompatActivity {
 
 
     public void drawPlan() {
-        graph = new mxGraph();
+       /*
+        graph = new Graph();
         Object parent = graph.getDefaultParent();
 
         Iterator<java.util.Map.Entry<Integer, Room>> roomIterator = map.getRooms().entrySet().iterator();
@@ -57,7 +58,6 @@ public class  BuildingPlan extends AppCompatActivity {
             //createVertices
             while (roomIterator.hasNext()) {
                 Room room = roomIterator.next().getValue();
-
                 Object o = graph.insertVertex(parent, null, room.getName() + ";" + room.getID(),
                         room.getCoordinates().getX(), room.getCoordinates().getY(), 20, 20);
 
@@ -89,9 +89,11 @@ public class  BuildingPlan extends AppCompatActivity {
         } finally {
             graph.getModel().endUpdate();
         }
-        mxGraphComponent graphComponent = new mxGraphComponent(graph);
+        */
+       // mxGraphComponent graphComponent = new mxGraphComponent(graph);
         Bitmap myBitmap = BitmapFactory.decodeFile(imgFile.getAbsolutePath());
         buildingplan.setImageBitmap(myBitmap);
+
 
     }
 
@@ -126,6 +128,7 @@ public class  BuildingPlan extends AppCompatActivity {
 
         }
         */
+           /*
         private void drawRoute (EscapeRoute route){
             // TODO replace graph showing map with one showing only the route
             graph = new mxGraph();
@@ -148,6 +151,7 @@ public class  BuildingPlan extends AppCompatActivity {
 
 
             } finally {
+                graph.
                 graph.getModel().endUpdate();
             }
 
@@ -157,10 +161,13 @@ public class  BuildingPlan extends AppCompatActivity {
 
         }
 
+
         private int getIDFromLabel (String labelText){
             String[] parsed = labelText.split(";");
             return Integer.parseInt(parsed[1]);
         }
+
+        */
 
 }
 
