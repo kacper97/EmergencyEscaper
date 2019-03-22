@@ -1,5 +1,7 @@
 package org.wit.emergencyescape.models;
 
+import org.wit.emergencyescape.activities.BuildingPlan;
+
 import java.io.FileNotFoundException;
 
 public class MainMap {
@@ -17,8 +19,8 @@ public class MainMap {
         }
         Map map = parser.getMap();
         // Draw it out and wait for users' selection then provide computed route
-        MapDrawer drawer = new MapDrawer(map);
-        drawer.drawMap();
+        BuildingPlan drawer = new BuildingPlan(map);
+        drawer.drawPlan();
     }
 
 }
