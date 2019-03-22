@@ -37,14 +37,14 @@
                 android:id="@+id/map"
                 android:name="com.google.android.gms.maps.SupportMapFragment"
                 android:layout_width="383dp"
-                android:layout_height="406dp"
+                android:layout_height="427dp"
                 tools:context="org.wit.emergencyescape.views.location.MapsActivity"
                 android:layout_alignParentTop="true"
                 android:layout_marginBottom="8dp"
                 app:layout_constraintBottom_toTopOf="@+id/latlng" app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent" app:layout_constraintHorizontal_bias="1.0"
                 android:layout_marginTop="8dp" app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.61"/>
+                app:layout_constraintVertical_bias="0.714"/>
         <TextView
                 android:layout_width="230dp"
                 android:layout_height="56dp"
