@@ -1,10 +1,12 @@
 package org.wit.emergencyescape.activities;
 
 import android.content.Context;
+import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.os.AsyncTask;
+import android.os.Environment;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
@@ -12,6 +14,8 @@ import org.wit.emergencyescape.models.Edge;
 import org.wit.emergencyescape.models.Graph;
 import org.wit.emergencyescape.models.Vertex;
 
+import java.io.File;
+import java.io.FileOutputStream;
 import java.util.LinkedList;
 import java.util.PriorityQueue;
 
@@ -38,7 +42,8 @@ public class BuildingPlanView extends View{
     public void init(AttributeSet attrs,int defStyle){
         paint.setColor(Color.BLACK);
         paint.setAntiAlias(true);
-    }
+
+        }
 
     public BuildingPlanView(Context context){
         super(context);
@@ -54,57 +59,60 @@ public class BuildingPlanView extends View{
     }
 
     public void onDraw(Canvas canvas){
-        super.onDraw(canvas);
-        tileWidth = width/cols;
-        tileHeight = height/rows;
-        int border=0;
 
-        // Stroke
-        paint.setStyle(Paint.Style.STROKE);
-        canvas.drawRect(0, 0, getWidth(), getHeight(), paint);
+            super.onDraw(canvas);
+            tileWidth = width / cols;
+            tileHeight = height / rows;
+            int border = 0;
 
-       // draw each tile according to grid matrix content
-        for(int r=0;r<rows;r++)
-            for(int c=0;c<cols;c++)
-            {
-                paint.setStyle(Paint.Style.FILL);
-                int value = grid[r][c];
-                switch(value){
-                    case 0:
+            // Stroke
+            paint.setStyle(Paint.Style.STROKE);
+            paint.setColor(Color.BLACK);
+            //canvas.drawRect(0,0, 5,10,paint);
+            //canvas.drawRect(0, 0, getWidth(), getHeight(), paint);
+
+            // draw each tile according to grid matrix content
+            for (int r = 0; r < rows; r++)
+                for (int c = 0; c < cols; c++) {
+                    paint.setStyle(Paint.Style.FILL);
+                    int value = grid[r][c];
+                    switch (value) {
+                        case 0:
+                            paint.setStyle(Paint.Style.STROKE);
+                            paint.setColor(Color.BLACK);
+                            break;
+                        case 1:
+                            paint.setColor(Color.RED);
+                            break;
+                        case 2:
+                            paint.setColor(Color.GREEN);
+                            break;
+                        case 3:
+                            paint.setColor(Color.BLACK);
+                            break;
+                        case 4:
+                            paint.setColor(Color.CYAN);
+                            border = 1;
+                            break;
+                        case 5:
+                            paint.setColor(Color.LTGRAY);
+                            border = 1;
+                            break;
+                        case 6:
+                            paint.setColor(Color.YELLOW);
+                            border = 1;
+                            break;
+                    }
+                    canvas.drawRect(c * tileWidth, r * tileHeight, c * tileWidth + tileWidth, r * tileHeight + tileHeight, paint);
+                    if (border == 1) {
                         paint.setStyle(Paint.Style.STROKE);
                         paint.setColor(Color.BLACK);
-                        break;
-                    case 1:
-                        paint.setColor(Color.RED);
-                        break;
-                    case 2:
-                        paint.setColor(Color.GREEN);
-                        break;
-                    case 3:
-                        paint.setColor(Color.BLACK);
-                        break;
-                    case 4:
-                        paint.setColor(Color.CYAN);
-                        border=1;
-                        break;
-                    case 5:
-                        paint.setColor(Color.LTGRAY);
-                        border=1;
-                        break;
-                    case 6:
-                        paint.setColor(Color.YELLOW);
-                        border=1;
-                        break;
-                }
-                canvas.drawRect(c*tileWidth, r*tileHeight,c*tileWidth+tileWidth ,r*tileHeight+tileHeight , paint);
-                if(border==1){
-                    paint.setStyle(Paint.Style.STROKE);
-                    paint.setColor(Color.BLACK);
-                    canvas.drawRect(c * tileWidth, r * tileHeight, c * tileWidth + tileWidth, r * tileHeight + tileHeight, paint);
+                        canvas.drawRect(c * tileWidth, r * tileHeight, c * tileWidth + tileWidth, r * tileHeight + tileHeight, paint);
+                    }
                 }
 
-            }
     }
+
 
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
@@ -225,7 +233,7 @@ public class BuildingPlanView extends View{
             }
         }
         graph = g;
-        invalidate();
+       invalidate();
     }
 
 
@@ -298,16 +306,12 @@ public class BuildingPlanView extends View{
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
-
                 current = current.parent;
             }
             return null;
         }
         protected void onProgressUpdate(Void... values) {
             invalidate();
-        }
-        protected void onPostExecute(){
-
         }
     }
 }

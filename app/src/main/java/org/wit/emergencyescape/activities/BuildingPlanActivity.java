@@ -1,7 +1,10 @@
 package org.wit.emergencyescape.activities;
 
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.view.Display;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -23,6 +26,7 @@ public class BuildingPlanActivity extends FragmentActivity {
             Button dijkstra = (Button) findViewById(R.id.dijkstra);
             final TextView results = (TextView) findViewById(R.id.results);
             grid = (BuildingPlanView) findViewById(R.id.grid);
+
 
 
             start.setOnClickListener(new View.OnClickListener() {
