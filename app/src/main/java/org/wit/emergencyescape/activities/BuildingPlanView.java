@@ -1,4 +1,5 @@
 package org.wit.emergencyescape.activities;
+//https://stackoverflow.com/questions/42527994/android-studio-load-bitmap-from-file-into-canvas
 
 import android.content.Context;
 import android.graphics.Bitmap;
