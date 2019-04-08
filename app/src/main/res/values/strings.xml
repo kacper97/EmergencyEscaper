@@ -60,4 +60,6 @@
     <string name="start">START</string>
     <string name="stop">STOP</string>
     <string name="dijstra">DIJSTRA</string>
+    <string name="external_dir"> Get Building Blan</string>
+    <string name="save">Save</string>
 </resources>

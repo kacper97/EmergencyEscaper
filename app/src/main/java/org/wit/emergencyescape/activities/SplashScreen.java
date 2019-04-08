@@ -14,8 +14,8 @@ public class SplashScreen extends Activity {
 
     /** Called when the activity is first created. */
     @Override
-    public void onCreate(Bundle icicle) {
-        super.onCreate(icicle);
+    public void onCreate(Bundle i) {
+        super.onCreate(i);
         setContentView(R.layout.activity_splash);
 
         /* New Handler to start the Menu-Activity

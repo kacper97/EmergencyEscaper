@@ -59,6 +59,16 @@
                 android:text="@string/dijstra"
                 android:id="@+id/dijkstra"
         />
+
+        <Button
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_marginTop="0sp"
+                android:layout_marginBottom="0sp"
+                android:text="@string/save"
+                android:id="@+id/save"
+        />
     </LinearLayout>
 
     <TextView

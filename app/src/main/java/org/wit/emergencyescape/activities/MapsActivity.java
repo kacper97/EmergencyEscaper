@@ -4,6 +4,7 @@ package org.wit.emergencyescape.activities;
 import android.Manifest;
 import android.content.pm.PackageManager;
 import android.location.*;
+import android.os.Build;
 import android.os.Bundle;
 import android.widget.TextView;
 import android.widget.Toolbar;
@@ -34,6 +35,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+        isMapPermissionGranted();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_maps);
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
@@ -41,13 +44,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
         locationManager = (LocationManager) getSystemService(LOCATION_SERVICE);
-        if (ActivityCompat.checkSelfPermission(this,
-                Manifest.permission.ACCESS_FINE_LOCATION)
-                != PackageManager.PERMISSION_GRANTED) {
-            ActivityCompat.requestPermissions(this, new String[]
-                            {Manifest.permission.ACCESS_FINE_LOCATION},
-                    REQUEST_LOCATION_PERMISSION);
-        }
+
         txtview= (TextView) findViewById(R.id.latlng);
         locationListener = new LocationListener() {
             @Override
@@ -102,6 +99,18 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, locationListener);
     }
 
+    public boolean isMapPermissionGranted() {
+        if (Build.VERSION.SDK_INT >= 23) {
+            if (getApplicationContext().checkSelfPermission(Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
+                return true;
+            } else {
+                ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, 1);
+                return false;
+            }
+        } else {
+            return true;
+        }
+    }
 
     /**
      * Manipulates the map once available.

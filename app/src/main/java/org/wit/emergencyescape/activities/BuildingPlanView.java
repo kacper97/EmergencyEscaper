@@ -2,22 +2,28 @@ package org.wit.emergencyescape.activities;
 //https://stackoverflow.com/questions/42527994/android-studio-load-bitmap-from-file-into-canvas
 
 import android.content.Context;
-import android.graphics.Bitmap;
-import android.graphics.Canvas;
-import android.graphics.Color;
-import android.graphics.Paint;
+import android.content.Intent;
+import android.graphics.*;
 import android.os.AsyncTask;
 import android.os.Environment;
+import android.provider.MediaStore;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.GridLayout;
+import android.widget.Toast;
+import org.wit.emergencyescape.R;
 import org.wit.emergencyescape.models.Edge;
 import org.wit.emergencyescape.models.Graph;
 import org.wit.emergencyescape.models.Vertex;
 
 import java.io.File;
 import java.io.FileOutputStream;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.LinkedList;
+import java.util.Locale;
 import java.util.PriorityQueue;
 
 
@@ -34,16 +40,15 @@ public class BuildingPlanView extends View{
     int stopClicked = 0;
     int stop_x,stop_y;
     final int animationtime=10;
-
     Graph graph;
     Paint paint = new Paint();
     async dijkstrathread=new async();
 
 
+
     public void init(AttributeSet attrs,int defStyle){
         paint.setColor(Color.BLACK);
         paint.setAntiAlias(true);
-
         }
 
     public BuildingPlanView(Context context){
@@ -69,8 +74,7 @@ public class BuildingPlanView extends View{
             // Stroke
             paint.setStyle(Paint.Style.STROKE);
             paint.setColor(Color.BLACK);
-            //canvas.drawRect(0,0, 5,10,paint);
-            //canvas.drawRect(0, 0, getWidth(), getHeight(), paint);
+
 
             // draw each tile according to grid matrix content
             for (int r = 0; r < rows; r++)
@@ -111,8 +115,9 @@ public class BuildingPlanView extends View{
                         canvas.drawRect(c * tileWidth, r * tileHeight, c * tileWidth + tileWidth, r * tileHeight + tileHeight, paint);
                     }
                 }
-
     }
+
+
 
 
     @Override
@@ -238,6 +243,7 @@ public class BuildingPlanView extends View{
     }
 
 
+
     public class async extends AsyncTask<Void,Void,Void>{
         protected Void doInBackground(Void... params) {
             // the part below needs to be graphed
@@ -315,5 +321,7 @@ public class BuildingPlanView extends View{
             invalidate();
         }
     }
+
+
 }
 
