@@ -49,7 +49,7 @@ public class BuildingPlanView extends View{
     public void init(AttributeSet attrs,int defStyle){
         paint.setColor(Color.BLACK);
         paint.setAntiAlias(true);
-        bmp = BitmapFactory.decodeResource(getResources(), R.drawable.saved);
+        bmp = BitmapFactory.decodeResource(getResources(), R.drawable.plan);
         }
 
     public BuildingPlanView(Context context){
@@ -77,7 +77,7 @@ public class BuildingPlanView extends View{
             // Stroke
             paint.setStyle(Paint.Style.STROKE);
             paint.setColor(Color.BLACK);
-            canvas.drawBitmap(bmp,(getWidth()/2),0,null);
+            canvas.drawBitmap(bmp,0,0,null);
 
             // draw each tile according to grid matrix content
             for (int r = 0; r < rows; r++)
@@ -98,8 +98,9 @@ public class BuildingPlanView extends View{
                         case 3:
                             paint.setColor(Color.BLACK);
                             break;
+                        //Discovery
                         case 4:
-                            paint.setColor(Color.CYAN);
+                            paint.setColor(Color.TRANSPARENT);
                             border = 1;
                             break;
                         case 5:
