@@ -143,8 +143,6 @@ public class BuildingPlanActivity extends FragmentActivity {
 
             // Convert the output file to Image such as .png
             bitmap.compress(Bitmap.CompressFormat.PNG, 90, mFileOutStream);
-            Intent intent = new Intent();
-            intent.putExtra("imagePath", StoredPath);
             mFileOutStream.flush();
             mFileOutStream.close();
 

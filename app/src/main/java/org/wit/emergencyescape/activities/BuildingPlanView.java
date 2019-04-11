@@ -28,8 +28,8 @@ import java.util.PriorityQueue;
 
 
 public class BuildingPlanView extends View{
-    int rows=40;
-    int cols=40;
+    int rows=30;
+    int cols=30;
     float tileWidth;
     float tileHeight;
     float width;
@@ -43,12 +43,13 @@ public class BuildingPlanView extends View{
     Graph graph;
     Paint paint = new Paint();
     async dijkstrathread=new async();
-
+    Bitmap bmp;
 
 
     public void init(AttributeSet attrs,int defStyle){
         paint.setColor(Color.BLACK);
         paint.setAntiAlias(true);
+        bmp = BitmapFactory.decodeResource(getResources(), R.drawable.saved);
         }
 
     public BuildingPlanView(Context context){
@@ -64,9 +65,11 @@ public class BuildingPlanView extends View{
         init(attrs, defStyle);
     }
 
-    public void onDraw(Canvas canvas){
+        public void onDraw(Canvas canvas){
+
 
             super.onDraw(canvas);
+            //canvas.setBitmap(bmp);
             tileWidth = width / cols;
             tileHeight = height / rows;
             int border = 0;
@@ -74,7 +77,7 @@ public class BuildingPlanView extends View{
             // Stroke
             paint.setStyle(Paint.Style.STROKE);
             paint.setColor(Color.BLACK);
-
+            canvas.drawBitmap(bmp,(getWidth()/2),0,null);
 
             // draw each tile according to grid matrix content
             for (int r = 0; r < rows; r++)
