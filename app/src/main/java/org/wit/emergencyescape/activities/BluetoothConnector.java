@@ -90,10 +90,16 @@ public class BluetoothConnector extends Activity implements OnClickListener {
     {
         try
         {
+            if (btSocket!=null)
+            {
+             btSocket.getOutputStream().write(v.toString().getBytes());
+         //    Toast.makeText(getApplicationContext(),"Test",Toast.LENGTH_SHORT).show();
+            }
         }
         catch (Exception e)
         {
-            Toast.makeText(getApplicationContext(),e.getMessage(), Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(),"Alarm Activated",Toast.LENGTH_SHORT).show();
+            //Toast.makeText(getApplicationContext(),e.getMessage(), Toast.LENGTH_SHORT).show();
         }
 
     }
@@ -104,7 +110,7 @@ public class BluetoothConnector extends Activity implements OnClickListener {
         {
             if (btSocket!=null)
             {
-                btSocket.getOutputStream().write(i.toString().getBytes());
+                btSocket.getOutputStream().write(i.getBytes());
             }
 
         }

@@ -1,10 +1,13 @@
 char cache;
 String inputString="";
+//Specify digital pin on the Arduino that the positive lead of piezo buzzer is attached.
+int piezoPin = 9;
 void setup()
 {
 Serial.begin(9600);
 pinMode(9,OUTPUT);
 }
+
 void loop()
 {
 if(Serial.available())
@@ -20,11 +23,11 @@ cache = Serial.read();
 }
 if(inputString == "f")
 {
-digitalWrite(9,HIGH);  
+  tone(piezoPin, 5000, 500);
 }
 else if(inputString == "b")
 {
-digitalWrite(9,LOW);
+  noTone(piezoPin);
 }
 inputString = "";
 }

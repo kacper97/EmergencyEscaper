@@ -39,7 +39,7 @@ public class BuildingPlanView extends View{
     int start_x,start_y;
     int stopClicked = 0;
     int stop_x,stop_y;
-    final int animationtime=10;
+    final int animationtime=01;
     Graph graph;
     Paint paint = new Paint();
     async dijkstrathread=new async();
@@ -49,7 +49,7 @@ public class BuildingPlanView extends View{
     public void init(AttributeSet attrs,int defStyle){
         paint.setColor(Color.BLACK);
         paint.setAntiAlias(true);
-        bmp = BitmapFactory.decodeResource(getResources(), R.drawable.plan);
+        bmp = BitmapFactory.decodeResource(getResources(), R.drawable.second);
         }
 
     public BuildingPlanView(Context context){
@@ -90,13 +90,13 @@ public class BuildingPlanView extends View{
                             paint.setColor(Color.BLACK);
                             break;
                         case 1:
-                            paint.setColor(Color.RED);
+                            paint.setColor(Color.BLUE);
                             break;
                         case 2:
                             paint.setColor(Color.GREEN);
                             break;
                         case 3:
-                            paint.setColor(Color.BLACK);
+                            paint.setColor(Color.RED);
                             break;
                         //Discovery
                         case 4:

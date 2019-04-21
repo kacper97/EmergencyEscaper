@@ -34,7 +34,7 @@ public class Graph {
     }
 
     public String Dijkstra(Vertex start,Vertex destination){
-        String text="Alg: Dijkstra "; //we will keep the processing results here
+        String text="Dijkstra "; //we will keep the processing results here
         //Initialization
         // d[start]=0 (other vertex's d_value is infinity by default), S={0} , Q = vertex
         long startTime = System.nanoTime();
@@ -75,7 +75,7 @@ public class Graph {
         if(destination.parent==null)
             text="This path does not exist";
         else{
-            text+=" Vertex ne set: "+set.size();
+            text+=" Vertex num set: "+set.size();
             //Dijkstra process finished, now we will take our path and print it
             Stack<Vertex> stack = new Stack<Vertex>();
             Vertex current = destination;
@@ -85,7 +85,7 @@ public class Graph {
             }
             double path_length = destination.d_value;
 
-            text+=" Nr.Hops:"+(stack.size()-1)+" Path length: "+String.format( "%.2f", path_length )+" Time: "+(stopTime-startTime)+" ns";
+            text+=" Nr.Hops:"+(stack.size()-1)+" Time: "+(stopTime-startTime)+" ns";
         }//end else for the existence of the path
         return text;
     }
