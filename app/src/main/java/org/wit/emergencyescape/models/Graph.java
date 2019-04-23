@@ -23,16 +23,6 @@ public class Graph {
         return null;
     }
 
-    public void linkedlist(){
-        for(int i=0;i<vertex.size();i++){
-            System.out.print(vertex.get(i).id+": ");
-            for(int j=0;j<vertex.get(i).edges.size();j++){
-                System.out.print("=>"+vertex.get(i).edges.get(j).destination.id);
-            }
-            System.out.println();
-        }
-    }
-
     public String Dijkstra(Vertex start,Vertex destination){
         String text="Dijkstra "; //we will keep the processing results here
         //Initialization
@@ -90,11 +80,6 @@ public class Graph {
         return text;
     }
 
-    public void heuristic(Vertex v,Vertex destination){
-        //distance heuristic
-        v.h_value=Math.sqrt((v.x-destination.x)*(v.x-destination.x)+
-                (v.y-destination.y)*(v.y-destination.y));
-    }
 
 
 }

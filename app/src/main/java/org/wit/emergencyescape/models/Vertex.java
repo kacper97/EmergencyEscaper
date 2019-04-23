@@ -8,10 +8,6 @@ public class Vertex implements Comparable<Vertex> {
     public boolean discovered = false;//found true ie vertex is in SET (Dijkstra)
     //grid coordinates
     public double x,y;
-    //Heuristic Value
-    public double h_value=0;
-    //Total weight
-    public double f_value=Double.POSITIVE_INFINITY;//(f_value=d_value+h_value)
 
     public Vertex(int id){
         this.id=id;

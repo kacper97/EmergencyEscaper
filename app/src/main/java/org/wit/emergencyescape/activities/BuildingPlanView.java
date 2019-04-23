@@ -175,6 +175,7 @@ public class BuildingPlanView extends View{
         return true;
     }
 
+    //responsible for the results printed above the graphm
     public String Dijkstra(){
         System.gc();
         getGraph();

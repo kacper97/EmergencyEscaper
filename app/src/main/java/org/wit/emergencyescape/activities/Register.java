@@ -80,7 +80,7 @@ public class Register extends AppCompatActivity {
 
         mAuth.createUserWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
-            //Annonymous class to see if reg is completed successfully
+            //Anonymous class to see if reg is completed successfully
             public void onComplete(@NonNull Task<AuthResult> task) {
                 progressBar.setVisibility(GONE);
                 if(task.isSuccessful()){
