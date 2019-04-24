@@ -56,10 +56,12 @@ public class BuildingPlanView extends View{
         super(context);
         init(null,0);
     }
+
     public BuildingPlanView(Context context, AttributeSet attrs) {
         super(context, attrs);
         init(attrs, 0);
     }
+
     public BuildingPlanView(Context context,AttributeSet attrs, int defStyle){
         super(context, attrs, defStyle);
         init(attrs, defStyle);

@@ -10,7 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import org.wit.emergencyescape.R;
 import org.wit.emergencyescape.main.MainApp;
 
-
+// Class that is responsible for methods on the dropdown menu
 public class Base extends AppCompatActivity {
     public MainApp app;
 

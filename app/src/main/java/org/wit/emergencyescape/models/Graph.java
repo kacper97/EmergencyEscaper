@@ -11,9 +11,10 @@ public class Graph {
     }
 
     public void addEdgeGrid(Vertex source,Vertex destination,double weight){
-        //for grid we will initialize its vertex edges we will make edge vtm a straight
+        //for grid we will initialize its vertex edges
         source.edges.add(new Edge(source,destination,weight));
     }
+
 
     public Vertex getV(double x,double y){
         for(int i=0;i<vertex.size();i++)
@@ -23,10 +24,11 @@ public class Graph {
         return null;
     }
 
+    // This is the thing that prints out on top o the screen
     public String Dijkstra(Vertex start,Vertex destination){
         String text="Dijkstra "; //we will keep the processing results here
         //Initialization
-        // d[start]=0 (other vertex's d_value is infinity by default), S={0} , Q = vertex
+        //t d[sart]=0 (other vertex's d_value is infinity by default), S={0} , Q = vertex
         long startTime = System.nanoTime();
         LinkedList<Vertex> set = new LinkedList<Vertex>();
         PriorityQueue<Vertex> queue = new PriorityQueue<Vertex>();
@@ -42,19 +44,19 @@ public class Graph {
             if(extracted==destination){
                 break;
             }
-
             //for each vertex into dhe adj list of extracted -> relax.
             for(int i=0;i<extracted.edges.size();i++){
                 //edge examined
                 Edge edge = extracted.edges.get(i);
                 //get neighbour vertex and relax
                 Vertex neighbour = edge.destination;
-                if(neighbour.discovered==false){
+                //if no neighbour
+                if(!neighbour.discovered){
                     //Relaxation
                     if(neighbour.d_value>extracted.d_value+edge.weight){
                         neighbour.d_value=extracted.d_value+edge.weight;
                         neighbour.parent=extracted;
-                        //insert neighbours in queue so we can choose dhe min one
+                        //insert neighbours in queue so we can choose the min one
                         queue.remove(neighbour);
                         queue.add(neighbour);
                     }
@@ -63,7 +65,7 @@ public class Graph {
         }
         long stopTime = System.nanoTime();
         if(destination.parent==null)
-            text="This path does not exist";
+            text="There is no route found";
         else{
             text+=" Vertex num set: "+set.size();
             //Dijkstra process finished, now we will take our path and print it
@@ -73,15 +75,10 @@ public class Graph {
                 stack.push(current);
                 current = current.parent;
             }
-            double path_length = destination.d_value;
-
             text+=" Nr.Hops:"+(stack.size()-1)+" Time: "+(stopTime-startTime)+" ns";
         }//end else for the existence of the path
         return text;
     }
-
-
-
 }
 
 

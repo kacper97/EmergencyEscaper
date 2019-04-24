@@ -56,6 +56,7 @@ public class BluetoothConnector extends Activity implements OnClickListener {
         });
     }
 
+    // Method to connect bluetooth device
     private void bluetooth_connect_device() throws IOException
     {
         try
@@ -85,6 +86,7 @@ public class BluetoothConnector extends Activity implements OnClickListener {
         catch(Exception e){}
     }
 
+    // Click
     @Override
     public void onClick(View v)
     {
@@ -104,6 +106,7 @@ public class BluetoothConnector extends Activity implements OnClickListener {
 
     }
 
+    //Method buzzer
     private void Buzzer_on_off(String i)
     {
         try

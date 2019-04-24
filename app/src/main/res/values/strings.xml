@@ -45,7 +45,7 @@
     <string name="appHelpExtraRate">If the location is on, you will see location latitude and longitude and based on
         that a building plan will be downloaded
     </string>
-    <string name="appHelp">This is the help screen for Polish Landmarks</string>
+    <string name="appHelp">This is the help screen for Emergency Escape</string>
     <string name="appHelpExtraAdd">Turn on the location option on your device so that the application will see where you
         are now
     </string>

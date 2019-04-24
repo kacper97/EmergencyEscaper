@@ -40,6 +40,7 @@ public class BuildingPlanActivity extends FragmentActivity {
     String pic_name = new SimpleDateFormat("yyyyMMdd_HHmmss", Locale.getDefault()).format(new Date());
     String StoredPath = DIRECTORY + pic_name + ".png";
 
+    // On Create and button handlers
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -89,6 +90,7 @@ public class BuildingPlanActivity extends FragmentActivity {
 
         }
 
+        // To save the image to the phone
     public boolean isStoragePermissionGranted() {
         if (Build.VERSION.SDK_INT >= 23) {
             if (getApplicationContext().checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED) {
@@ -111,6 +113,7 @@ public class BuildingPlanActivity extends FragmentActivity {
         super.onStop();
     }
 
+    //Saving permision
     @Override
     public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
@@ -128,6 +131,7 @@ public class BuildingPlanActivity extends FragmentActivity {
         }
     }
 
+    //Save
     public void save(View v, String StoredPath) {
         Log.v("log_tag", "Width: " + v.getWidth());
         Log.v("log_tag", "Height: " + v.getHeight());
