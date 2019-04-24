@@ -2,10 +2,12 @@ package org.wit.emergencyescape.activities;
 
 
 import android.Manifest;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.*;
 import android.os.Build;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.Toolbar;
@@ -116,6 +118,10 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     protected void onStop() {
         super.onStop();
         locationManager.removeUpdates(locationListener);
+    }
+
+    public void buildingplan(View v) {
+        startActivity(new Intent(this,BuildingPlanActivity.class));
     }
 
 

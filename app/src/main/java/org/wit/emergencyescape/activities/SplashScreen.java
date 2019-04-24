@@ -10,7 +10,7 @@ import org.wit.emergencyescape.activities.LogIn;
 public class SplashScreen extends Activity {
 
     /** Duration of wait **/
-    private final int SPLASH_DISPLAY_LENGTH = 3000;
+    private final int SPLASH_DISPLAY_LENGTH = 3000; // 3 sec
 
     /** Called when the activity is first created. */
     @Override
@@ -18,8 +18,6 @@ public class SplashScreen extends Activity {
         super.onCreate(i);
         setContentView(R.layout.activity_splash);
 
-        /* New Handler to start the Menu-Activity
-         * and close this Splash-Screen after some seconds.*/
         new Handler().postDelayed(new Runnable(){
             @Override
             public void run() {
