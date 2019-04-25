@@ -45,7 +45,7 @@ public class BuildingPlanView extends View{
     async dijkstrathread=new async();
     Bitmap bmp;
 
-
+// iinitialization of canvas
     public void init(AttributeSet attrs,int defStyle){
         paint.setColor(Color.BLACK);
         paint.setAntiAlias(true);
@@ -67,6 +67,7 @@ public class BuildingPlanView extends View{
         init(attrs, defStyle);
     }
 
+    //canvas drawing
         public void onDraw(Canvas canvas){
 
 
@@ -81,11 +82,12 @@ public class BuildingPlanView extends View{
             paint.setColor(Color.BLACK);
             canvas.drawBitmap(bmp,0,0,null);
 
+            //
             // draw each tile according to grid matrix content
-            for (int r = 0; r < rows; r++)
-                for (int c = 0; c < cols; c++) {
+            for (int row = 0; row < rows; row++)
+                for (int column = 0; column < cols; column++) {
                     paint.setStyle(Paint.Style.FILL);
-                    int value = grid[r][c];
+                    int value = grid[row][column];
                     switch (value) {
                         case 0:
                             paint.setStyle(Paint.Style.STROKE);
@@ -114,17 +116,14 @@ public class BuildingPlanView extends View{
                             border = 1;
                             break;
                     }
-                    canvas.drawRect(c * tileWidth, r * tileHeight, c * tileWidth + tileWidth, r * tileHeight + tileHeight, paint);
+                    canvas.drawRect(column * tileWidth, row * tileHeight, column * tileWidth + tileWidth, row * tileHeight + tileHeight, paint);
                     if (border == 1) {
                         paint.setStyle(Paint.Style.STROKE);
                         paint.setColor(Color.BLACK);
-                        canvas.drawRect(c * tileWidth, r * tileHeight, c * tileWidth + tileWidth, r * tileHeight + tileHeight, paint);
+                        canvas.drawRect(column * tileWidth, row * tileHeight, column * tileWidth + tileWidth, row * tileHeight + tileHeight, paint);
                     }
                 }
     }
-
-
-
 
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
@@ -139,45 +138,45 @@ public class BuildingPlanView extends View{
         if(motionEvent.getAction()==MotionEvent.ACTION_DOWN) {
             float x = motionEvent.getX();
             float y = motionEvent.getY();
-            int c = (int) (x / tileWidth);
-            int r = (int) (y / tileHeight);
+            int column = (int) (x / tileWidth);
+            int row = (int) (y / tileHeight);
             if(startClicked==1){
                 grid[start_y][start_x]=0; // set start to be empty grid
-                grid[r][c]=1;
-                start_x=c;
-                start_y=r;
+                grid[row][column]=1;
+                start_x=column;
+                start_y=row;
                 startClicked=0;
             }
             else if(stopClicked==1){
                 grid[stop_y][stop_x]=0;
-                grid[r][c]=2;
-                stop_x=c;
-                stop_y=r;
+                grid[row][column]=2;
+                stop_x=column;
+                stop_y=row;
                 stopClicked=0;
             }
-            else if (grid[r][c]!=1&&grid[r][c]!=2) {
-                if (grid[r][c] != 3)
-                    grid[r][c] = 3;
+            else if (grid[row][column]!=1&&grid[row][column]!=2) {
+                if (grid[row][column] != 3)
+                    grid[row][column] = 3;
                 else
-                    grid[r][c] = 0;
+                    grid[row][column] = 0;
             }
         }
         if(motionEvent.getAction()==MotionEvent.ACTION_MOVE){
             float x = motionEvent.getX();
             float y = motionEvent.getY();
-            int c = (int) (x / tileWidth);
-            int r = (int) (y / tileHeight);
+            int column = (int) (x / tileWidth);
+            int row = (int) (y / tileHeight);
             if(x>width || y>height||x<0||y<0)
                 return false; // false if out of bounds
-            if(grid[r][c]!=1&&grid[r][c]!=2)
-                if (grid[r][c] != 3)
-                    grid[r][c] = 3;
+            if(grid[row][column]!=1&&grid[row][column]!=2)
+                if (grid[row][column] != 3)
+                    grid[row][column] = 3;
         }
         invalidate();
         return true;
     }
 
-    //responsible for the results printed above the graphm
+    //responsible for the results printed above the graph
     public String Dijkstra(){
         System.gc();
         getGraph();
@@ -203,6 +202,8 @@ public class BuildingPlanView extends View{
                 counter++;
             }
         }
+
+        // x y
         int x1,x2,x3,x4,x5,x6,x7,x8;
         int y1,y2,y3,y4,y5,y6,y7,y8;
 
@@ -242,7 +243,6 @@ public class BuildingPlanView extends View{
                 if(x8>=0&&x8<cols&&y8>=0&&y8<rows)
                     if(grid[y8][x8]!=3)
                         g.addEdgeGrid(g.getV(j,i),g.getV(x8,y8),1.4);
-
             }
         }
         graph = g;
@@ -250,7 +250,7 @@ public class BuildingPlanView extends View{
     }
 
 
-
+//The AsyncTask executes everything in doInBackground() inside of another thread, which does not have access to the GUI where your views are.
     public class async extends AsyncTask<Void,Void,Void>{
         protected Void doInBackground(Void... params) {
             // the part below needs to be graphed
