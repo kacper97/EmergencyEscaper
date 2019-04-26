@@ -28,7 +28,6 @@ public class Graph {
     public String Dijkstra(Vertex start,Vertex destination){
         String text="Dijkstra "; //we will keep the processing results here
         //Initialization
-        //t d[sart]=0 (other vertex's d_value is infinity by default), S={0} , Q = vertex
         long startTime = System.nanoTime();
         LinkedList<Vertex> set = new LinkedList<Vertex>();
         PriorityQueue<Vertex> queue = new PriorityQueue<Vertex>();
@@ -50,7 +49,7 @@ public class Graph {
                 Edge edge = extracted.edges.get(i);
                 //get neighbour vertex and relax
                 Vertex neighbour = edge.destination;
-                //if no neighbour
+                //if no neighbour discoveredgi
                 if(!neighbour.discovered){
                     //Relaxation
                     if(neighbour.d_value>extracted.d_value+edge.weight){

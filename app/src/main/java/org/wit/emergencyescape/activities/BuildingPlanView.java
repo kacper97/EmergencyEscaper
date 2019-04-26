@@ -34,7 +34,7 @@ public class BuildingPlanView extends View{
     float tileHeight;
     float width;
     float height;
-    int[][] grid = new int[rows][cols]; //0-empty 1-start 2-end 3-hurdle 4-located in set 5-located on queue 6-tile path
+    int[][] grid = new int[rows][cols]; //0-empty 1-start 2-end 3-fire 4-located in set 5-located on queue 6-tile path
     int startClicked = 0;
     int start_x,start_y;
     int stopClicked = 0;
@@ -178,7 +178,7 @@ public class BuildingPlanView extends View{
 
     //responsible for the results printed above the graph
     public String Dijkstra(){
-        System.gc();
+        System.gc(); // garbage collector
         getGraph();
         dijkstrathread = new async();
         dijkstrathread.execute();
@@ -190,6 +190,8 @@ public class BuildingPlanView extends View{
 
     public void getGraph(){
         //we get grid, compute graph, remove those tiles that have been processed by any of the algorithms before
+        //3-fire 4-located in set 5-located on queue 6-tile path
+       // add vertex id x y
         Graph g = new Graph();
         int counter=0;
         for(int i=0;i<rows;i++) {
@@ -211,16 +213,27 @@ public class BuildingPlanView extends View{
             for (int j = 0; j < cols; j++){
                 if(grid[i][j]==3)
                     continue;
-                x1=j-1;y1=i-1;
-                x2=j;y2=i-1;
-                x3=j+1;y3=i-1;
-                x4=j-1;y4=i;
-                x5=j+1;y5=i;
-                x6=j-1;y6=i+1;
-                x7=j;y7=i+1;
-                x8=j+1;y8=i+1;
+
+                x1=j-1;
+                y1=i-1;
+                x2=j;
+                y2=i-1;
+                x3=j+1;
+                y3=i-1;
+                x4=j-1;
+                y4=i;
+                x5=j+1;
+                y5=i;
+                x6=j-1;
+                y6=i+1;
+                x7=j;
+                y7=i+1;
+                x8=j+1;
+                y8=i+1;
+
                 if(x1>=0&&x1<cols&&y1>=0&&y1<rows)
                     if(grid[y1][x1]!=3)
+                        //src destination weight
                         g.addEdgeGrid(g.getV(j,i),g.getV(x1,y1),1.4);
                 if(x2>=0&&x2<cols&&y2>=0&&y2<rows)
                     if(grid[y2][x2]!=3)
@@ -263,7 +276,7 @@ public class BuildingPlanView extends View{
             queue.add(start);
             start.d_value=0;
 
-            //cycle until queue is empty or destination has been inserted into s
+            //cycle until queue is empty or destination has been inserted into set
             while(!queue.isEmpty()) {
                 if (isCancelled()) break;
                 Vertex extracted = queue.poll();
@@ -282,7 +295,7 @@ public class BuildingPlanView extends View{
                 }
 
 
-                //for each vertex into dhe adj list of extracted -> relax.
+                //for each vertex into the adj list of extracted -> relax.
                 for (int i = 0; i < extracted.edges.size(); i++) {
                     //edge examined
                     Edge edge = extracted.edges.get(i);
@@ -298,17 +311,18 @@ public class BuildingPlanView extends View{
                         } catch (InterruptedException e) {
                             e.printStackTrace();
                         }
-                        if (neighbour.d_value > extracted.d_value + edge.weight) {
+                        if (neighbour.d_value > extracted.d_value + edge.weight)
+                        {
                             neighbour.d_value = extracted.d_value + edge.weight;
                             neighbour.parent = extracted;
-                            //insert neighbours in queue so we can choose dhe min one
+                            //insert neighbours in queue so we can choose the min one
                             queue.remove(neighbour);
                             queue.add(neighbour);
                         }
                     }//if discovered
-
                 }
             }
+
             Vertex current = destination;
             while (current != null) {
                 if (isCancelled()) break;
@@ -324,6 +338,7 @@ public class BuildingPlanView extends View{
             }
             return null;
         }
+
         protected void onProgressUpdate(Void... values) {
             invalidate();
         }
