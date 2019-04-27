@@ -1,34 +1,28 @@
-char cache;
+char junk;
 String inputString="";
-//Specify digital pin on the Arduino that the positive lead of piezo buzzer is attached.
-int piezoPin = 9;
-void setup()
+
+void setup()                    // run once, when the sketch starts
 {
-  Serial.begin(9600);
-  pinMode(9,OUTPUT);
+ Serial.begin(9600);            // set the baud rate to 9600, same should be of your Serial Monitor
+ pinMode(9, OUTPUT);
 }
 
 void loop()
-  {
-  if(Serial.available())
+{
+  if(Serial.available()){
+  while(Serial.available())
     {
-    while(Serial.available())
-      {
-        char inChar = (char)Serial.read();
-        inputString += inChar;
-      }
-    while (Serial.available()>0)
-      {
-      cache = Serial.read();
-      }
-    if(inputString == "f")
-    {
-      tone(piezoPin, 5000, 500);
+      char inChar = (char)Serial.read(); //read the input
+      inputString += inChar;        //make a string of the characters coming on serial
     }
-      else if(inputString == "b")
-      {
-        noTone(piezoPin);
-      }
-  inputString = "";
+    Serial.println(inputString);
+    while (Serial.available() > 0)  
+    { junk = Serial.read() ; }      // clear the serial buffer
+    if(inputString == "a"){         //in case of 'a' turn the Buzzer on
+      tone(9, 1000, 10000000000000);
+    }else if(inputString == "b"){   //incase of 'b' turn the Buzzer off
+           noTone(9);
     }
+    inputString = "";
+  }
 }

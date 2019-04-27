@@ -8,7 +8,10 @@ import android.app.Activity;
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
 import android.bluetooth.BluetoothSocket;
+import android.media.AudioManager;
+import android.media.ToneGenerator;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -50,8 +53,9 @@ public class BluetoothConnector extends Activity implements OnClickListener {
         i1.setOnTouchListener(new View.OnTouchListener()
         {   @Override
         public boolean onTouch(View v, MotionEvent event){
-            if(event.getAction() == MotionEvent.ACTION_DOWN) {Buzzer_on_off("f");}
-            if(event.getAction() == MotionEvent.ACTION_UP){Buzzer_on_off("b");}
+            if(event.getAction() == MotionEvent.ACTION_DOWN) {Buzzer_on_off("0");
+                Log.v("Test","Buzzer");}
+            if(event.getAction() == MotionEvent.ACTION_UP){Buzzer_on_off("1");}
             return true;}
         });
     }
@@ -86,6 +90,8 @@ public class BluetoothConnector extends Activity implements OnClickListener {
         catch(Exception e){}
     }
 
+
+
     // Click
     @Override
     public void onClick(View v)
@@ -96,11 +102,15 @@ public class BluetoothConnector extends Activity implements OnClickListener {
             {
              btSocket.getOutputStream().write(v.toString().getBytes());
          //    Toast.makeText(getApplicationContext(),"Test",Toast.LENGTH_SHORT).show();
+                ToneGenerator toneGen1 = new ToneGenerator(AudioManager.STREAM_MUSIC, 100);
+                toneGen1.startTone(ToneGenerator.TONE_CDMA_PIP,150);
             }
         }
         catch (Exception e)
         {
             Toast.makeText(getApplicationContext(),"Alarm Activated",Toast.LENGTH_SHORT).show();
+            ToneGenerator toneGen1 = new ToneGenerator(AudioManager.STREAM_MUSIC, 100);
+            toneGen1.startTone(ToneGenerator.TONE_CDMA_PIP,150);
             //Toast.makeText(getApplicationContext(),e.getMessage(), Toast.LENGTH_SHORT).show();
         }
 

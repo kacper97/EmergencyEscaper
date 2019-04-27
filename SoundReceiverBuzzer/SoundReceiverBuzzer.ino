@@ -14,9 +14,9 @@ void loop (){
   Serial.println (val);
   // when the sensor detects a signal above the threshold value, Buzzer sounds
   if (val==HIGH) {
-    digitalWrite(buzzerPin, HIGH);
+      tone(buzzerPin, 1000, 10000000);
   }
   else {
-    digitalWrite(buzzerPin, LOW);
+   noTone(buzzerPin);
   }
 }
